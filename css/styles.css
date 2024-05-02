@@ -5,3 +5,7 @@ h1 {
 footer {
   text-align: center;
 }
+ul {
+  list-style: none;
+  padding: 0;
+}

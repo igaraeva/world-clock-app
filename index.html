@@ -11,35 +11,36 @@
   <body>
     <div class="container">
       <header><h1>World Clock</h1></header>
-      <select name="" id="">
+      <select id="select-city">
         <option value="">Choose a city</option>
-        <option value="moscow">Moscow</option>
-        <option value="london">London</option>
-        <option value="new york">New York</option>
+        <option value="Europe/Moscow">Moscow</option>
+        <option value="Europe/London">London</option>
+        <option value="America/New_York">New York</option>
       </select>
       <section class="current-location">
         <div class="local-time">Local Time</div>
         <div class="current-location-time" id="current-location-time">
-          14:54
+          14:54:00
         </div>
         <div class="current-location-date" id="current-location-date">
           Thursday, 2nd May 2024
         </div>
       </section>
-      <ul>
+
+      <ul id="cities">
         <li class="city" id="colombo">
           <div>
             <h2>Colombo 🇱🇰</h2>
-            <div class="date">May 2nd 2024</div>
+            <div class="date"></div>
           </div>
-          <div class="time">15:03</div>
+          <div class="time"></div>
         </li>
         <li class="city" id="seoul">
           <div>
             <h2>Seoul 🇰🇷</h2>
-            <div class="date">May 2nd 2024</div>
+            <div class="date"></div>
           </div>
-          <div class="time">15:03</div>
+          <div class="time"></div>
         </li>
       </ul>
     </div>

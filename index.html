@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
     <link rel="stylesheet" href="css/styles.css" />
     <title>🕣 World Clock</title>
   </head>
@@ -17,18 +19,22 @@
       </select>
       <section class="current-location">
         <div class="local-time">Local Time</div>
-        <div class="current-location-time">14:54</div>
-        <div class="current-location-date">Thursday, 2nd May 2024</div>
+        <div class="current-location-time" id="current-location-time">
+          14:54
+        </div>
+        <div class="current-location-date" id="current-location-date">
+          Thursday, 2nd May 2024
+        </div>
       </section>
       <ul>
-        <li class="city">
+        <li class="city" id="colombo">
           <div>
             <h2>Colombo 🇱🇰</h2>
             <div class="date">May 2nd 2024</div>
           </div>
           <div class="time">15:03</div>
         </li>
-        <li class="city">
+        <li class="city" id="seoul">
           <div>
             <h2>Seoul 🇰🇷</h2>
             <div class="date">May 2nd 2024</div>
@@ -38,7 +44,7 @@
       </ul>
     </div>
     <footer>
-      This project was coded by Indira Garaeva and is
+      This project was coded by <strong>Indira Garaeva</strong> and is
       <a href="https://github.com/igaraeva/world-clock-app" target="_blank"
         >open-sourced on GitHub</a
       >

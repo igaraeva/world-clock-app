@@ -26,31 +26,38 @@ function updateTime() {
     colomboDateElement.innerHTML = colomboDate;
     colomboTimeElement.innerHTML = colomboTime;
   }
+  let londonElement = document.querySelector("#london");
+  if (londonElement) {
+    let londonDateElement = londonElement.querySelector(".date");
+    let londonTimeElement = londonElement.querySelector(".time");
+    let londonDate = moment().tz("Europe/London").format("dddd, Do YYYY");
+    let londonTime = moment().tz("Europe/London").format("H:mm:ss");
 
-  let seoulElement = document.querySelector("#seoul");
-  if (seoulElement) {
-    let seoulDateElement = seoulElement.querySelector(".date");
-    let seoulTimeElement = seoulElement.querySelector(".time");
-    let seoulDate = moment().tz("Asia/Seoul").format("dddd, Do YYYY");
-    let seoulTime = moment().tz("Asia/Seoul").format("H:mm:ss");
-
-    seoulDateElement.innerHTML = seoulDate;
-    seoulTimeElement.innerHTML = seoulTime;
+    londonDateElement.innerHTML = londonDate;
+    londonTimeElement.innerHTML = londonTime;
   }
 }
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let citiesElement = document.querySelector("#cities");
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
-  citiesElement.innerHTML = `<li class="city">
+  if (cityTimeZone.length > 0) {
+    citiesElement.innerHTML = `<li class="city">
           <div>
             <h2> ${cityName}</h2>
             <div class="date">${cityTime.format("dddd, Do YYYY")}</div>
           </div>
-          <div class="time">${cityTime.format("H:mm:ss")}</div>
-        </li>`;
+          <div class="time">${cityTime.format("H:mm")}</div>
+        </li>
+        <a  href = " / ">All cities</a>`;
+  } else {
+    citiesElement.innerHTML = `<a href=" / ">All cities</a>`;
+  }
 }
 let selectCityElement = document.querySelector("#select-city");
 selectCityElement.addEventListener("change", updateCity);
